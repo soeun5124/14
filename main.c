@@ -1,26 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "linkedList.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+
+
 int main(int argc, char *argv[]) {
+	int n[5];
 	
-	char *pc = NULL;
-	int i = 0;
+	 printf("input S integers :");
+	 scanf("%d %d %d %d %d %d",n, n+1, n+2, n+3, n+4);
+	 
+	 insertDataToTail(n[0]);
+	 insertDataToTail(n[1]);
+	 insertDataToTail(n[2]);
+	 insertDataToTail(n[3]);
+	 insertDataToTail(n[4]);
 	
-	pc = (char*)malloc(100*sizeof(char));
-	if(pc == NULL) {
-		printf("메모리할당오류\n");
-		exit(1);
-	}
+	print_list();
 	
-	for (i=0;i<26;i++){
-		pc[i] = 'a'+i;
-	}
+	print_node(2);
 	
-	pc[i] = 0;
-	printf("%s\n",pc);
-	free(pc);
-	
-	return 0;
 }
